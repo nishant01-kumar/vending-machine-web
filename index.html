@@ -37,115 +37,22 @@
     </section>
 
     <section id="cart-page" class="hidden">
-      <div class="product-list">
+      <div class="cart-list">
         <div class="head">
+          <i class="fa-solid fa-chevron-left backTocart" title="Back"></i>
           <h3>Your cart</h3>
           <div class="cart">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="badge">0</span>
           </div>
         </div>
-        <div class="item-list">
-          <div class="item">
-            <img src="/assets/cokeImg.png" alt="coke" />
-            <div class="item-info">
-              <p class="product-name">Coke</p>
-              <span class="clr"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>40</span
-              >
-            </div>
-            <div class="quantity-box">
-              <button class="minus">−</button>
-
-              <span class="count">1</span>
-
-              <button class="plus">+</button>
-            </div>
-            <div class="price-item">
-              <span class="clr total-price"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>80</span
-              >
-              <i class="fa-regular fa-trash-can cancel-item"></i>
-            </div>
+        <div class="cart-item-list"></div>
+        <div class="payment-area">
+          <div class="total-amount">
+            <p>Total Amount</p>
+            <span class="clr totalItem-price">₹ 0</span>
           </div>
-
-          <div class="item">
-            <img src="/assets/dairyImg.png" alt="coke" />
-            <div class="item-info">
-              <p class="product-name">Dairy Milk</p>
-              <span class="clr"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>40</span
-              >
-            </div>
-            <div class="quantity-box">
-              <button class="minus">−</button>
-
-              <span class="count">1</span>
-
-              <button class="plus">+</button>
-            </div>
-            <div class="price-item">
-              <span class="clr total-price"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>80</span
-              >
-              <i class="fa-regular fa-trash-can cancel-item"></i>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/assets/chipsImg.png" alt="coke" />
-            <div class="item-info">
-              <p class="product-name">Chips</p>
-              <span class="clr"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>30</span
-              >
-            </div>
-            <div class="quantity-box">
-              <button class="minus">−</button>
-
-              <span class="count">1</span>
-
-              <button class="plus">+</button>
-            </div>
-            <div class="price-item">
-              <span class="clr total-price"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>30</span
-              >
-              <i class="fa-regular fa-trash-can cancel-item"></i>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/assets/spiteImg.png" alt="coke" />
-            <div class="item-info">
-              <p class="product-name">Sprite</p>
-              <span class="clr"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>20</span
-              >
-            </div>
-            <div class="quantity-box">
-              <button class="minus">−</button>
-
-              <span class="count">1</span>
-
-              <button class="plus">+</button>
-            </div>
-            <div class="price-item">
-              <span class="clr total-price"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>20</span
-              >
-              <i class="fa-regular fa-trash-can cancel-item"></i>
-            </div>
-          </div>
-          <div class="payment-area">
-            <div class="total-amount">
-              <p>Total Amount</p>
-              <span class="clr"
-                ><i class="fa-solid fa-indian-rupee-sign"></i>130</span
-              >
-            </div>
-            <button class="payment-btn">Proceed To Payment</button>
-          </div>
+          <button class="payment-btn">Proceed To Payment</button>
         </div>
       </div>
     </section>
@@ -155,5 +62,6 @@
       </div>
     </section>
     <script src="/script.js"></script>
+    <script type="module" src="/prctice.js"></script>
   </body>
 </html>

@@ -1,11 +1,11 @@
 const cartIcons = document.querySelectorAll(".cart");
-
 const productPage = document.querySelector("#product-page");
 const cartPage = document.querySelector("#cart-page");
-const badge = document.querySelector(".badge");
-
+const badge = document.querySelectorAll(".badge");
 const itemList = document.querySelector(".item-list");
-
+const cartItem_list = document.querySelector(".cart-item-list");
+const totalPrice = document.querySelector(".totalItem-price");
+const backBtn = document.querySelector(".backTocart");
 const products = [
   {
     id: 1,
@@ -40,9 +40,9 @@ const products = [
 const cart = [];
 
 function renderProducts() {
-  itemList.innerHTML = "";
+  let html = "";
   products.forEach((product) => {
-    itemList.innerHTML += `
+    html += `
     <div class="item" data-id=${product.id}>
               <img src= ${product.image} />
               <div class="item-info">
@@ -58,13 +58,51 @@ function renderProducts() {
             </div>
     `;
   });
+  itemList.innerHTML = html;
 }
 
 renderProducts();
 
-let cartVal = 0;
+function renderCart() {
+  let html = "";
+  cart.forEach((item) => {
+    html += `
+    <div class="cart-item" data-id=${item.id}>
+            <img src="${item.image}" />
+            <div class="item-info">
+              <p class="product-name">${item.name}</p>
+              <span class="clr"
+                ><i class="fa-solid fa-indian-rupee-sign"></i>${item.price}</span
+              >
+            </div>
+            <div class="quantity-box">
+              <button class="minus">−</button>
 
-function cartItems(product) {
+              <span class="count">${item.quantity}</span>
+
+              <button class="plus">+</button>
+            </div>
+            <div class="price-item">
+              <span class="clr total-price"
+                ><i class="fa-solid fa-indian-rupee-sign"></i>${item.price * item.quantity} </span
+              >
+              <i class="fa-regular fa-trash-can cancel-item"></i>
+            </div>
+          </div>
+    `;
+  });
+  cartItem_list.innerHTML = html;
+}
+
+function updateTotalPrice() {
+  const total = cart.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
+
+  totalPrice.innerHTML = `<i class="fa-solid fa-indian-rupee-sign"></i>${total}`;
+}
+
+function addToCart(product) {
   const cartItem = cart.find((item) => {
     return item.id === product.id;
   });
@@ -82,6 +120,19 @@ function cartItems(product) {
   }
 }
 
+function updateBadge() {
+  badge.forEach((count) => {
+    count.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  });
+}
+
+function updateUI() {
+  updateBadge();
+  renderCart();
+  renderProducts();
+  updateTotalPrice();
+}
+
 itemList.addEventListener("click", (e) => {
   if (!e.target.classList.contains("item-add")) return;
 
@@ -90,22 +141,90 @@ itemList.addEventListener("click", (e) => {
 
   const product = products.find((p) => p.id === id);
 
-  const cartItem = cart.find((item) => {
-    return item.id === product.id;
-  });
-
   if (product.stock > 0) {
     product.stock--;
-    badge.textContent = ++cartVal;
-    cartItems(product);
-
-    renderProducts();
+    addToCart(product);
+    updateUI();
+  } else {
+    alert(`Sorry, ${product.name} is not Available yet :(`);
   }
 });
 
+function showProductPage() {
+  productPage.classList.remove("hidden");
+  cartPage.classList.add("hidden");
+}
+
+function showCartPage() {
+  productPage.classList.add("hidden");
+  cartPage.classList.remove("hidden");
+}
+
 cartIcons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    productPage.classList.toggle("hidden");
-    cartPage.classList.toggle("hidden");
+    showCartPage();
   });
+});
+
+backBtn.addEventListener("click", showProductPage);
+
+function getProductAndCartItem(id) {
+  return {
+    cartItem: cart.find((item) => item.id === id),
+    product: products.find((p) => p.id === id),
+  };
+}
+
+function increaseQuantity(id) {
+  const { product, cartItem } = getProductAndCartItem(id);
+
+  if (product.stock > 0) {
+    cartItem.quantity++;
+    product.stock--;
+    updateUI();
+  } else {
+    alert(`${product.name} is out of stock`);
+  }
+}
+
+function decreaseQuantity(id) {
+  const { product, cartItem } = getProductAndCartItem(id);
+
+  cartItem.quantity--;
+  product.stock++;
+
+  if (cartItem.quantity === 0) {
+    const index = cart.findIndex((item) => item.id === id);
+    cart.splice(index, 1);
+  }
+
+  updateUI();
+}
+
+function removeFromCart(id) {
+  const { product, cartItem } = getProductAndCartItem(id);
+  product.stock += cartItem.quantity;
+
+  const index = cart.findIndex((item) => item.id === id);
+  cart.splice(index, 1);
+  updateUI();
+}
+
+cartItem_list.addEventListener("click", (e) => {
+  const cartElement = e.target.closest(".cart-item");
+  if (!cartElement) return;
+  const id = Number(cartElement.dataset.id);
+  const { product, cartItem } = getProductAndCartItem(id);
+
+  if (e.target.classList.contains("plus")) {
+    increaseQuantity(id);
+  }
+
+  if (e.target.classList.contains("minus")) {
+    decreaseQuantity(id);
+  }
+
+  if (e.target.classList.contains("cancel-item")) {
+    removeFromCart(id);
+  }
 });
