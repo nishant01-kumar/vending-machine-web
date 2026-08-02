@@ -56,12 +56,75 @@
         </div>
       </div>
     </section>
+
+    <section id="review-page" class="hidden">
+      <div class="final-check-list">
+        <div class="review-order">
+          <i class="fa-solid fa-chevron-left backTocart" title="Back"></i>
+          <p>Review Your Order</p>
+        </div>
+        <div class="order-list">
+          <div class="review-item">
+            <p class="item-name">Coke</p>
+            <p class="Quantity">X2</p>
+            <p class="item-price">₹ 0</p>
+          </div>
+        </div>
+        <div class="payment-area">
+          <div class="sub-total">
+            <p>Subtotal</p>
+            <span class="sub-price">₹ 0</span>
+          </div>
+          <div class="total-amount">
+            <p>Total Amount</p>
+            <span class="clr totalItem-price">₹ 0</span>
+          </div>
+          <div class="alert-info">
+            <span class="info">
+              <i class="fa-solid fa-circle-info"></i>
+              Please check your order before proceed to payment.</span
+            >
+          </div>
+          <button class="payment-btn">Continue to Payment</button>
+        </div>
+      </div>
+    </section>
+
     <section id="payment-page" class="hidden">
-      <div class="payment-card">
-        <h3>Select Payment Method</h3>
+      <div class="payment-select-bar">
+        <div class="sct-payment-type">
+          <i class="fa-solid fa-chevron-left backTocart" title="Back"></i>
+          <p>Select payment Method</p>
+        </div>
+
+        <div class="payment-methods">
+          <button class="cash btn-payment">Cash</button>
+          <button class="upi btn-payment">UPI</button>
+          <button class="card btn-payment">Card</button>
+        </div>
+
+        <div class="payment-inp-wrapper">
+          <label for="pay-inp">
+            <span>Enter Amount</span>
+          </label>
+          <div class="payment-inp-box">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <input
+              type="number"
+              id="pay-inp"
+              class="cash-inp"
+              placeholder="0"
+            />
+          </div>
+          <button class="payment-btn">Pay Now</button>
+        </div>
+
+        <div class="total-payable">
+          <p class="clr total-pay">Total Payable: ₹ 0</p>
+          <p class="change-note">You will get change after payment.</p>
+        </div>
       </div>
     </section>
     <script src="/script.js"></script>
-    <script type="module" src="/prctice.js"></script>
   </body>
 </html>

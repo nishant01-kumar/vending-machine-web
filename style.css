@@ -13,7 +13,8 @@ body {
 }
 
 .product-list,
-.cart-list {
+.cart-list,
+.final-check-list {
   width: 420px;
   background: white;
   border-radius: 10px;
@@ -73,6 +74,7 @@ body {
 .cart-item-list {
   padding: 20px;
 }
+
 .item,
 .cart-item {
   display: flex;
@@ -247,7 +249,6 @@ body {
 }
 
 .payment-btn {
-  width: 380px;
   height: 40px;
   border-radius: 0.5rem;
   border: none;
@@ -271,4 +272,181 @@ body {
 .backTocart {
   font-size: 16px;
   cursor: pointer;
+}
+
+.review-order,
+.sct-payment-type {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.review-order p,
+.sct-payment-type p {
+  position: relative;
+  right: 70px;
+}
+
+.order-list {
+  border-bottom: 2px solid #ddd;
+  padding: 20px;
+}
+
+.review-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  padding: 5px;
+}
+
+.sub-total p {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sub-price {
+  font-weight: 600;
+}
+
+.alert-info {
+  background-color: #fef1c1;
+  border: 2px solid #ffe086;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+}
+
+.alert-info .info {
+  font-size: 15px;
+  font-weight: 450;
+  color: #3a3a3ad0;
+}
+
+.payment-select-bar {
+  width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.payment-methods {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-payment {
+  flex: 1;
+  height: 45px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.cash {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  background-color: #25a352;
+  color: #fff;
+  border-color: #25a352;
+}
+
+.cash:active {
+  background-color: #1f8b45;
+}
+
+.card {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.payment-inp-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 15px;
+  gap: 12px;
+}
+
+label span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.payment-inp-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+rupee-icon {
+  color: #666;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.cash-inp {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.total-payable {
+  border-radius: 0.5rem;
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eafaf1;
+  gap: 4px;
+}
+
+.total-pay {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.change-note {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
 }
