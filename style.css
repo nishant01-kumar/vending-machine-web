@@ -450,3 +450,214 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 13px;
   color: #666;
 }
+
+.payment-progress-bar {
+  width: 420px;
+  /* gap: 15px; */
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-load {
+  border: 7px solid #ddd;
+  border-top: 7px solid #25a352;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.para1 {
+  font-weight: 600;
+}
+
+#payment-success-page {
+  width: 420px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.payment-successful {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eafaf1;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.correct-symbol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.correct-symbol i {
+  font-size: 60px;
+  color: #25a352;
+  margin: 10px;
+}
+
+.amt-paid {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.amt-paid span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.change {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.item-tray img {
+  width: 70px;
+  object-fit: contain;
+  transform: translateY(10px);
+}
+
+.item-tray-bar {
+  width: 92%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: linear-gradient(#ececec, #d8d8d8);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-tray-bar p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.item-tray {
+  width: 85%;
+  height: 70px;
+  border: 6px solid #6d737b;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background: linear-gradient(
+    to right,
+    #364150 0%,
+    #1f2b38 15%,
+    #263443 50%,
+    #1f2b38 85%,
+    #364150 100%
+  );
+  box-shadow:
+    inset 0 10px 15px rgba(255, 255, 255, 0.15),
+    inset 0 -12px 18px rgba(0, 0, 0, 0.45);
+}
+
+.item-msg {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+#payment-failed-page,
+#thankYou-page {
+  width: 420px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.payment-failed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #faeaea;
+  border-radius: 10px;
+  gap: 18px;
+  padding: 35px 20px;
+}
+
+.wrong-symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrong-symbol i {
+  font-size: 70px;
+  color: #ff0000;
+}
+
+.try-again-btn {
+  width: 90%;
+  height: 42px;
+  border-radius: 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #f64848;
+  cursor: pointer;
+}
+
+.try-again-btn:active {
+  background-color: #8b1f1f;
+}
+
+.thanks-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddebf3;
+  border-radius: 10px;
+  gap: 18px;
+  padding: 35px 20px;
+}
+
+.back-home-btn {
+  width: 90%;
+  height: 42px;
+  border-radius: 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2f80ed;
+  cursor: pointer;
+}

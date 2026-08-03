@@ -125,6 +125,92 @@
         </div>
       </div>
     </section>
+
+    <section id="payment-processing-page" class="hidden">
+      <div class="payment-progress-bar">
+        <h3>Processing Payment...</h3>
+        <div class="payment-load"></div>
+        <p class="para1">Please wait a moment.</p>
+        <p>Do not close or refresh the page.</p>
+      </div>
+    </section>
+
+    <section id="payment-success-page" class="hidden">
+      <div class="payment-successful">
+        <div class="correct-symbol">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Payment Successful!</h3>
+        </div>
+        <p class="amt-paid">Amount Paid: <span> ₹200 </span></p>
+        <p class="change">Change: <span class="clr"> ₹70 </span></p>
+        <div class="item-tray-bar">
+          <p>Dispensing your items...</p>
+          <div class="item-tray">
+            <img src="/assets/cokeImg.png" />
+          </div>
+        </div>
+        <p class="item-msg">Please take items from the tray.</p>
+      </div>
+    </section>
+
+    <section id="payment-failed-page" class="hidden">
+      <div class="payment-failed">
+        <div class="wrong-symbol">
+          <i class="fa-regular fa-circle-xmark"></i>
+          <h3>Payment Failed!</h3>
+        </div>
+        <p>Something went wrong.</p>
+        <p>Please try again.</p>
+
+        <button class="try-again-btn">Try Again</button>
+      </div>
+    </section>
+
+    <section id="thankYou-page" class="hidden">
+      <div class="thanks-bar">
+        <div class="thank-symbol">
+          <div class="order-success-icon">
+            <svg
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="60" cy="60" r="55" fill="#2F80ED" />
+
+              <!-- Bag -->
+              <path
+                d="M42 43h36a4 4 0 0 1 4 4v31a6 6 0 0 1-6 6H44a6 6 0 0 1-6-6V47a4 4 0 0 1 4-4z"
+                fill="white"
+              />
+
+              <path
+                d="M50 43v-6a10 10 0 0 1 20 0v6"
+                fill="none"
+                stroke="white"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+
+              <!-- Check -->
+              <path
+                d="M55 66l7 7 13-15"
+                fill="none"
+                stroke="#2F80ED"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Thank You!</h3>
+        </div>
+        <p>Enjoy your purchase.</p>
+
+        <button class="back-home-btn">Back to home</button>
+      </div>
+    </section>
+
     <script src="/script.js"></script>
   </body>
 </html>
